@@ -7,3 +7,9 @@ computeArr[1]=$(($a + $b * $c))
 computeArr[2]=$(( $a * $b + $c))
 computeArr[3]=$(( $c + $a + $b))
 computeArr[4]=$(( $a % $b + $c))
+
+numArray=()
+for number in ${computeArr[@]}
+do
+	numArray[$number]=$computeArr[$number]
+done
