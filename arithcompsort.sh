@@ -2,14 +2,21 @@
 read -p "Number1 : " a
 read -p "Number2 : " b
 read -p "Number3 : " c
-declare -A computeArr
-computeArr[1]=$(($a + $b * $c))
-computeArr[2]=$(( $a * $b + $c))
-computeArr[3]=$(( $c + $a + $b))
-computeArr[4]=$(( $a % $b + $c))
+
+declare -A myArr
+myArr=()
+myArr[0]=$(($a + $b * $c))
+myArr[1]=$(( $a * $b + $c))
+myArr[2]=$(( $c + $a + $b))
+myArr[3]=$(( $a % $b + $c))
 
 numArray=()
-for number in ${computeArr[@]}
+for ele in "${!myArr[@]}"
 do
-	numArray[$number]=$computeArr[$number]
+	numArray[$ele]=`echo ${myArr[$ele]}`
 done
+
+for ((count=0;count<4;count++))
+do
+	echo -e ${numArray[$count]}
+done | sort -nr
