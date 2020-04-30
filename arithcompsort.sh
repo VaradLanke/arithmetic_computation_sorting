@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p a
-read -p b
-read -p c
+read -p "Number1 : " a
+read -p "Number2 : " b
+read -p "Number3 : " c
 
