@@ -2,7 +2,8 @@
 read -p "Number1 : " a
 read -p "Number2 : " b
 read -p "Number3 : " c
-echo $(( $a + $b * $c))
-echo $(( $a * $b + $c))
-echo $(( $c + $a + $b))
-echo $(( $a % $b + $c))
+declare -A computeArr
+computeArr[1]=$(($a + $b * $c))
+computeArr[2]=$(( $a * $b + $c))
+computeArr[3]=$(( $c + $a + $b))
+computeArr[4]=$(( $a % $b + $c))
