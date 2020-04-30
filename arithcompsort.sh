@@ -16,7 +16,14 @@ do
 	numArray[$ele]=`echo ${myArr[$ele]}`
 done
 
+echo "Descending : "
 for ((count=0;count<4;count++))
 do
 	echo -e ${numArray[$count]}
 done | sort -nr
+
+echo "Ascending : "
+for ((count=0;count<4;count++))
+do
+        echo -e ${numArray[$count]}
+done | sort -n
